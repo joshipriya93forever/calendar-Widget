@@ -7,7 +7,7 @@
 Custom Angular calendar/date picker. Compatible with __Angular2__ and __Angular4__ versions.
 
 ## Prerequisite 
- * [index.html](https://github.com/joshipriya93forever/Angular-2-Calender.git)
+ * [https://angular.io/guide/quickstart](https://angular.io/guide/quickstart)
 
 ## Development of this project
 
@@ -26,7 +26,7 @@ Custom Angular calendar/date picker. Compatible with __Angular2__ and __Angular4
 * License: MIT
 
 ## Author
-* Author: Priya JOshi
+* Author: Priya Joshi
 
 ## Keywords
 * Calendar
