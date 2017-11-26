@@ -1,0 +1,102 @@
+<div class="container" style="margin-top: 50px;">
+  <div class="calinput input-group">
+    <input type="text" [ngModel]="selectedDate | date">
+    <span class="input-group-addon glyphicon glyphicon-calendar" (click)="openCalander()"></span>
+  </div>
+  <div *ngIf="isCalendarOpen" class="calendarbox">
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <label>Return Date</label>
+      </div>
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <button class="pull-right" (click)="close()">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+      </div>
+    </div>
+    <div class="gap"></div>
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6">
+        <label class="">Show fexible dates</label>
+        <div class="btn-group">
+          <label class="btn" [(ngModel)]="isFlexible" btnRadio="yes">Yes</label>
+          <label class="btn" [(ngModel)]="isFlexible" btnRadio="no">No</label>
+        </div>
+      </div>
+    </div>
+    <div class="gap"></div>
+    <div class="row">
+      <div class="col-xs-5 col-sm-5 col-md-5 monrow">
+        <div class="row">
+          <div class="col-xs-3 col-sm-3 col-md-3">Year</div>
+        </div>
+        <div class="row">
+          <button class="col-xs-3 col-sm-3 col-md-3" (click)="getMonths(today)" [ngClass]="{'active': isCurrentYear}">{{today | date:'yyyy'}}</button>
+          <button class="col-xs-3 col-sm-3 col-md-3" (click)="getMonths(nextYear)" [ngClass]="{'active': !isCurrentYear}">{{nextYear | date:'yyyy'}}</button>
+        </div>
+        <div class="row" style="margin-top: 90px;">
+          <div class="col-xs-3 col-sm-3 col-md-3">Month</div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4 col-sm-3 col-md-3" *ngFor="let month of months; let i = index">
+            <button (click)="getDates(i)" [disabled]='i < currentMonth && currentYear === selectedYear'[ngClass]="{'active': i === selectedMonth}">{{month}}</button>
+          </div>
+        </div>
+      </div>
+      <div class="monrow"></div>
+      <div class="col-xs-7 col-sm-7 col-md-7">
+        <div>Day</div>
+        <table>
+          <tr>
+            <th *ngFor="let day of daysLabel">{{day}}</th>
+          </tr>
+          <tr>
+            <td *ngFor="let r1 of row1">
+              <button (click)="getSelectedDate(r1)" [disabled]='r1 === null  || r1 < currentDate && currentMonth === selectedMonth && currentYear === selectedYear' [ngClass]="{'active': r1 === selectedDate}">{{r1}}
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td *ngFor="let r2 of row2">
+              <button (click)="getSelectedDate(r2)" [disabled]='r2 < currentDate && currentMonth === selectedMonth && currentYear === selectedYear' [ngClass]="{'active': r2 === currentDate}">{{r2}}
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td *ngFor="let r3 of row3">
+              <button (click)="getSelectedDate(r3)" [disabled]='r3 < currentDate && currentMonth === selectedMonth && currentYear === selectedYear' [ngClass]="{'active': r3 === currentDate}">
+                {{r3}}
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td *ngFor="let r4 of row4">
+              <button (click)="getSelectedDate(r4)" [disabled]='r4 < currentDate && currentMonth === selectedMonth && currentYear === selectedYear' [ngClass]="{'active': r4 === currentDate}">
+                {{r4}}
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td *ngFor="let r5 of row5">
+              <button (click)="getSelectedDate(r5)" [disabled]='r5 < currentDate && currentMonth === selectedMonth && currentYear === selectedYear' [ngClass]="{'active': r5 === currentDate}">
+                {{r5}}
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td *ngFor="let r6 of row6">
+              <button (click)="getSelectedDate(r6)" [disabled]='r6 < currentDate && currentMonth === selectedMonth && currentYear === selectedYear' [ngClass]="{'active': r6 === currentDate}">
+                {{r6}}
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

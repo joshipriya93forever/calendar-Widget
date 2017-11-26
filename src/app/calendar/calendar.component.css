@@ -1,0 +1,80 @@
+.calinput{
+  max-width: 210px;
+}
+.calendarbox .active{
+  background-color: #67070738;
+  padding: 3px 12px;
+}
+.calendarbox button[disabled]{
+  background-color: white;
+  color: lightgray;
+  cursor: not-allowed;
+  border-width: 0px;
+  border-style: none;
+  border-color: white;
+  border-image: none;
+}
+.gap{
+  margin-bottom: 20px;
+}
+.monrow{
+  border-right: 2px solid lightgoldenrodyellow;
+}
+.calendarbox button{
+  border-width: 0px;
+  border-style: none;
+  border-color: white;
+  border-image: none;
+  background-color: white;
+  cursor: pointer;
+  padding: 3px 12px;
+}
+.label{
+  text-align: center;
+  color: black;
+  font-size: 12px;
+}
+
+
+@media screen and (min-width: 1245px) {
+  .calendarbox{
+  background-color: white;
+  height: 60%;
+  width: 50%;
+  border: 1px solid black;
+  position: absolute;
+  padding: 20px;
+}
+td{
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+th{
+  text-align: center;
+  padding:8px;
+}
+}
+@media screen and (max-width: 1245px) {
+  .calendarbox{
+    background-color: white;
+    height: 60%;
+    width: 50%;
+    border: 1px solid black;
+    position: absolute;
+    padding: 10px;
+  }
+  td{
+    padding: 2px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 500;
+  }
+  th{
+    text-align: center;
+    padding:4px;
+    font-size: 11px;
+  }
+}
+

@@ -1,0 +1,5 @@
+<CustomCalendar [cust-calendar]="calendarProperty.isCalendarOpen" (showdate)="onSelectDate($event)"></CustomCalendar>
+<div class="container" style="margin-top: 50px;">
+ <label>Selected Date</label>
+<input type="text" [ngModel]="selectedDate | date">
+</div>
